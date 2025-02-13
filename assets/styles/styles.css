@@ -195,6 +195,12 @@ nav {
         display: flex;
         flex-direction: row;  
         gap: 2rem;  
+        transition: .3 ease-in-out;
+        
+    }
+
+    .nav_list a:hover {
+        color:#977b5f;
     }
 
     .nav_link {
@@ -310,9 +316,9 @@ nav {
 .home_sociais {
     display: grid;
     position: absolute;
-    right: -3.8rem; /* Ajuste para que fiquem mais próximos da borda direita */
-    top: 50%; /* Posiciona os ícones no meio vertical da imagem */
-    transform: translateY(-50%); /* Ajuste para centralizar exatamente */
+    right: -3.8rem; 
+    top: 50%; 
+    transform: translateY(-50%); 
     row-gap: 1rem;
     z-index: 15;
 }
@@ -515,6 +521,13 @@ footer {
 /* Dispositivos móveis (320px a 480px) */
 @media (min-width: 320px) and (max-width: 480px) {
 
+    /* NAV */
+
+    .nav_logo a{
+        font-size: 1.5rem;
+
+    }
+
     /* Home */
     .home_data {
         flex-direction: column-reverse;
@@ -613,6 +626,10 @@ footer {
     .curso_image {
         width: 70vw;
     }
+
+    .footer_texto p {
+        font-size: 1rem;
+    }
 }
 
 /* iPads e tablets (481px a 768px) */
@@ -710,6 +727,10 @@ footer {
 
     .curso_image {
         width: 40vw;
+    }
+
+    .footer_texto p {
+        font-size: 1rem;
     }
 
 }
