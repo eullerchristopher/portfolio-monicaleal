@@ -1,0 +1,790 @@
+/*=============== FONT ===============*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*=============== CONFIG ===============*/
+
+:root {
+    /* CORES */
+
+    --cor-do-fundo:#e6ded1;
+    --cor-da-letra:#a58360;
+
+    /* TIPOGRAFIA */
+
+    --font-logo:"Cinzel Decorative", serif;
+    --font-texto:"Poppins", serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+    border: none;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+}
+
+body {
+    background-color: var(--cor-do-fundo);
+    font-family: var(--font-texto);
+    margin: 5rem 0 0 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin-inline: 1.5rem;
+}
+
+.main {
+    overflow: hidden;
+}
+
+.section_title{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-top: 5rem;  
+    position: relative;
+    color: var(--cor-da-letra);
+}
+
+/*=============== HEADER E NAV ===============*/
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(132, 137, 141, 0.1);
+    background-color: transparent;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+}
+
+.nav_logo a{
+    color: var(--cor-da-letra);
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: var(--font-logo);
+}
+
+.nav_toggle,
+.nav_close{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--cor-da-letra);
+    
+}
+
+/* BLUR NO HEADER */
+
+.blur-header::after {
+    content: '';
+    position: absolute;
+    width: 1000%;
+    height: 100%;
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px); 
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Navegação em dispositivos móveis */
+@media screen and (max-width: 1200px) {
+    .nav_menu {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        top: 0;
+        right: -100%;  
+        width: 80%;
+        height: 100%;
+        background-color: white;
+       /* background-color: hsla(316, 100%, 83%, 0.2);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);*/ 
+        padding: 3rem;  
+        transition: right 0.4s ease-in-out;  
+        box-sizing: border-box;
+    }
+
+    .nav_list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+        padding-top: 3rem;  
+    }
+
+    .nav_link {
+        position: relative;
+        color: var(--cor-da-letra);
+        font-weight: 400;
+        font-size: 1.1rem;
+        transition: color 0.4s;
+    }
+
+    .nav_link:hover {
+        color: rgb(255, 240, 240);
+    }
+
+    .nav_sociais {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav_sociais a{
+        font-size: 1.4rem;
+        font-weight: 550;
+        color: var(--cor-da-letra);
+        transition: color 0.4s;
+    }
+
+    .nav_sociais a:hover {
+        color: rgb(255, 240, 240);
+    }
+
+    /* Botão de fechar no menu */
+    .nav_close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        cursor: pointer;  /* Adiciona um cursor de ponteiro */
+    }
+
+    /* Mostra o menu quando a classe .show-menu for adicionada */
+    .show-menu {
+        right: 0;  /* Move o menu para a posição visível */
+    }
+}
+
+/*Navegação Dispositivos Grandes*/
+
+@media screen and (min-width: 1200px) {
+    .container {
+        margin-inline: auto;
+    }
+
+    .nav_list {
+        display: flex;
+        flex-direction: row;  
+        gap: 2rem;  
+    }
+
+    .nav_link {
+        position: relative;
+        color: var(--cor-da-letra);
+        font-weight: 500;
+    }
+
+    /* Estilo do botão de fechar (provavelmente um ícone de fechar no menu) */
+    .nav_close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+    }
+
+    /* Exibe o menu se a classe show-menu for adicionada */
+    .show-menu {
+        right: 0;
+        transform: translateX(0); /* Exemplo: mover para a posição original */
+        transition: transform 0.3s ease;
+    }
+
+    .nav_sociais {
+        display: none;
+    }
+
+    .nav_toggle,
+    .nav_close {
+        display: none;
+    }
+}
+
+/*=============== HOME ===============*/
+
+.home_data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    gap: 8rem;
+}
+
+.home_texto {
+    color: var(--cor-da-letra);
+}
+
+.home_texto h2{
+    font-size: 5rem;
+    font-family: var(--font-logo);
+}
+
+.home_texto h1 {
+    font-size: 1.5rem;
+    font-weight: 350;
+    color: var(--cor-da-letra);
+}
+
+.home_texto p {
+    color: black;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 350;
+    line-height: 1.8;
+}
+
+.home_texto a {
+    display: inline-block;
+    padding: 1rem 1rem;
+    background-color: var(--cor-da-letra);
+    color: var(--cor-do-fundo);
+    font-size: 1.2rem;
+    transition: background-color .5s;
+    border-radius: 0.2rem;
+}
+
+.home_texto a:hover {
+    background-color:#977b5f;
+}
+
+.home_texto h1 {
+    margin-bottom: 2rem;
+}
+
+.home_perfil {
+    position: relative;
+}
+
+.home_img {
+    position: relative;
+}
+
+.home_image {
+    position: relative;
+    width: 60vw;
+    z-index: 10;
+}
+
+.home_sombra {
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-do-fundo);
+    position: absolute;
+    bottom: -.90rem;
+    right: -.90rem;
+    border: 4px solid var(--cor-da-letra);
+    z-index: 1;
+}
+
+.home_sociais {
+    display: grid;
+    height: max-content;
+    position: absolute;
+    right: -5rem;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    row-gap: 1rem;
+}
+
+.home_sociais i{
+    background-color: var(--cor-da-letra);
+    color: var(--cor-do-fundo);
+    font-size: 1.25rem;
+    padding: 6px;
+    display: grid;
+    place-items: center;
+    transition: background-color .5s;
+}
+
+.home_sociais i:hover {
+    background-color: var(--cor-do-fundo);
+    color: var(--cor-da-letra);
+}
+
+/*=============== SOBRE ===============*/
+
+.sobre {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    background-color: white;
+}
+
+.sobre_data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+}
+
+.sobre_texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--cor-da-letra);
+    font-weight: 500;
+}
+
+.sobre_image {
+    width: 100vw;
+}
+
+.sobre_texto p {
+    font-size: 1.2rem;
+    font-weight: 350;
+    line-height: 1.8;
+}
+
+/*=============== IDENTIDADE ===============*/
+
+.identidade_data {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    min-height: 800px;
+}
+
+.identidade_acordeao {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.identidade_acordeao-item {
+    background-color: var(--cor-da-letra);
+    border: 2px solid var(--cor-da-letra);
+    border-radius: .5rem;
+    padding: 1rem .75rem;
+}
+
+.identidade_header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.identidade_header h2 {
+    color: var(--cor-do-fundo);
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: .2rem;
+}
+
+.identidade_acordeao-arrow {
+    display: inline-flex;
+    padding: .20rem;
+    color: var(--cor-da-letra);
+    border-radius: 2px;
+    font-size: 1.3rem;
+    margin-left: auto;
+    transition: .3s;
+}
+
+.identidade_acordeao-arrow i {
+    color: var(--cor-do-fundo);
+    transition: .4s;
+}
+
+.identidade_acordeao-descricao {
+    font-size: 2rem;
+    padding: 1.25rem 2.5rem 0 2.75rem;
+}
+
+.identidade_acordeao-content {
+    overflow: hidden;
+    height: 0;
+    transition: all .25s ease;
+}
+
+.identidade_acordeao-content p{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 2;
+    font-size: 1rem;
+    font-weight: 350;
+    color: var(--cor-do-fundo);
+}
+
+.identidade_img img {
+    width: 200vw;
+}
+/*=============== CURSO ===============*/
+
+.curso {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    background-color: white;
+}
+
+.curso_data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+}
+
+.curso_texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--cor-da-letra);
+    font-weight: 500;
+}
+
+.curso_texto p {
+    font-size: 1.2rem;
+    font-weight: 350;
+    margin-bottom: 2rem;
+}
+
+.curso_texto a {
+    display: inline-block;
+    padding: 1rem 1rem;
+    background-color: var(--cor-da-letra);
+    color: var(--cor-do-fundo);
+    font-size: 1.2rem;
+    transition: background-color .5s;
+    border-radius: 0.2rem;
+}
+
+.curso_texto a:hover {
+    background-color:#977b5f;
+}
+
+.curso_image {
+    width: 40vw;
+    box-shadow: 0 2px 4px rgba(132, 137, 141, 0.1);
+}
+
+/*=============== FOOTER ===============*/
+
+footer {
+    padding: 3rem;
+    background-color: var(--cor-do-fundo);
+}
+
+.footer_data {
+    text-align: center;
+}
+
+.footer_texto h2 {
+    font-family: var(--font-logo);
+    color: var(--cor-da-letra);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer_texto p {
+    font-size: 1.2rem;
+}
+
+
+/*=============== MEDIA QUERY ===============*/
+
+/* Dispositivos móveis (320px a 480px) */
+@media (min-width: 320px) and (max-width: 480px) {
+
+    /* Home */
+    .home_data {
+        flex-direction: column-reverse;
+        gap: 3rem;
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+    }
+
+    .home_texto {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home_texto h2 {
+        font-size: 1.9rem;
+    }
+
+    .home_texto h1 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem; 
+    }
+
+    .home_texto p {
+        font-size: 1rem;
+    }
+
+    .home_image {
+        width: 50vw;
+    }
+
+    /* Sobre */
+
+    .sobre {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .sobre_data {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .sobre_texto {
+        text-align: center;
+    }
+
+    .sobre_texto h2 {
+        font-size: 1.9rem;
+    }
+
+    .sobre_texto p {
+        font-size: 1rem;
+    }
+
+    .sobre_image {
+        width: 50vw;
+    }
+
+    /* Identidade */
+
+    .identidade_data {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .identidade_acordeao-item {
+        padding: 0.5rem;
+    }
+
+    .identidade_header h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Curso */
+
+    .curso_data {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    .curso_texto {
+        text-align: center;
+    }
+
+    .curso_texto h2{
+        font-size: 1.9rem;
+    }
+
+    .curso_texto p {
+        font-size: 1.2rem;
+    }
+
+    .curso_image {
+        width: 70vw;
+    }
+}
+
+/* iPads e tablets (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    /* Home */
+    .home_data {
+        flex-direction: column-reverse;
+        gap: 3rem;
+        padding-top: 1rem;
+    }
+
+    .home_texto {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home_texto h2 {
+        font-size: 2.2rem;
+    }
+
+    .home_texto h1 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem; 
+    }
+
+    .home_texto p {
+        font-size: 1rem;
+    }
+
+    .home_image {
+        width: 30vw;
+    }
+
+    /* Sobre */
+
+    .sobre {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .sobre_data {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .sobre_texto {
+        text-align: center;
+    }
+
+    .sobre_texto h2 {
+        font-size: 1.9rem;
+    }
+
+    .sobre_texto p {
+        font-size: 1rem;
+    }
+
+    .sobre_image {
+        width: 30vw;
+    }
+
+    /* Identidade */
+
+    .identidade_data {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .identidade_header h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Curso */
+
+    .curso_data {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    .curso_texto {
+        text-align: center;
+    }
+
+    .curso_texto h2{
+        font-size: 2.2rem;
+    }
+
+    .curso_texto p {
+        font-size: 1.2rem;
+    }
+
+    .curso_image {
+        width: 40vw;
+    }
+
+}
+
+
+/* Notebooks (769px a 1366px) */
+@media (min-width: 769px) and (max-width: 1366px) {
+
+    /* Home */
+
+    .home_texto h2 {
+        font-size: 4rem;
+    }
+
+    .home_texto h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .home_texto p {
+        font-size: 1.1rem;
+        
+    }
+
+    .home_perfil {
+        padding-right: 5rem;
+    }
+
+    .home_sociais {
+        padding-right: 5rem;
+    }
+
+    .home_image {
+        width: 50vw;
+    }
+
+    /* Sobre */
+
+    .sobre_texto h2 {
+        font-size: 2rem;
+    }
+
+    .sobre_texto p {
+        font-size: 1.1rem;
+    }
+
+    .sobre_image {
+        width: 110vw;
+    }
+
+    /* Identidade */
+
+    .identidade_data {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .identidade_acordeao-item {
+        padding: 1rem;
+    }
+
+    .identidade_header h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Curso */
+
+    .curso_texto h2 {
+        font-size: 2.5rem;
+    }
+
+    .curso_texto p {
+        font-size: 1.3rem;
+    }
+
+    .curso_image {
+        width: 40vw;
+    }
+
+}
