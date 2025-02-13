@@ -546,6 +546,10 @@ footer {
         width: 50vw;
     }
 
+    .home_sociais {
+        padding-right: 1rem;
+    }
+
     /* Sobre */
 
     .sobre {
