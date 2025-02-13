@@ -281,6 +281,9 @@ nav {
 
 .home_perfil {
     position: relative;
+    display: flex; /* Adicionando flexbox para controle de layout */
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
 }
 
 .home_img {
@@ -306,13 +309,12 @@ nav {
 
 .home_sociais {
     display: grid;
-    height: max-content;
     position: absolute;
-    right: -5rem;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
+    right: -3.8rem; /* Ajuste para que fiquem mais próximos da borda direita */
+    top: 50%; /* Posiciona os ícones no meio vertical da imagem */
+    transform: translateY(-50%); /* Ajuste para centralizar exatamente */
     row-gap: 1rem;
+    z-index: 15;
 }
 
 .home_sociais i{
@@ -544,10 +546,6 @@ footer {
 
     .home_image {
         width: 50vw;
-    }
-
-    .home_sociais {
-        padding-right: 1rem;
     }
 
     /* Sobre */
