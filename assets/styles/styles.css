@@ -287,9 +287,9 @@ nav {
 
 .home_perfil {
     position: relative;
-    display: flex; /* Adicionando flexbox para controle de layout */
-    justify-content: center; /* Centraliza o conteúdo */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
 }
 
 .home_img {
@@ -377,8 +377,8 @@ nav {
 }
 
 .identidade_data {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -518,7 +518,6 @@ footer {
 .footer_texto p {
     font-size: 1.2rem;
 }
-
 
 /*=============== MEDIA QUERY ===============*/
 
