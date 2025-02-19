@@ -343,7 +343,7 @@ nav {
 .sobre {
     padding-top: 10rem;
     padding-bottom: 10rem;
-    background-color: white;
+    background-color: var(--cor-do-fundo)
 }
 
 .sobre_data {
@@ -371,6 +371,10 @@ nav {
 }
 
 /*=============== IDENTIDADE ===============*/
+
+.identidade {
+    background-color: white;
+}
 
 .identidade_data {
     padding-top: 10rem;
