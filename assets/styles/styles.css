@@ -260,7 +260,7 @@ nav {
 }
 
 .home_texto p {
-    color: black;
+    color: var(--cor-da-letra);
     margin-bottom: 2rem;
     font-size: 1.2rem;
     font-weight: 350;
@@ -354,10 +354,15 @@ nav {
 }
 
 .sobre_texto h2 {
+    font-family: var(--font-logo);
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: var(--cor-da-letra);
-    font-weight: 500;
+    font-weight: 550;
+}
+
+.sobre_texto p {
+    color: var(--cor-da-letra);
 }
 
 .sobre_image {
@@ -475,6 +480,7 @@ nav {
     font-size: 1.2rem;
     font-weight: 350;
     margin-bottom: 2rem;
+    color: var(--cor-da-letra);
 }
 
 .curso_texto a {
